@@ -12,5 +12,8 @@
         "mocha": "^3.2.0",
         "nightmare": "^2.10.0",
         "node-static": "^0.7.9"
+    },
+    "dependencies": {
+        "bulma": "^0.5.0"
     }
 }

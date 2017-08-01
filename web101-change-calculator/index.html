@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Change Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
+    <!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
   </head>
   <body>
-    <!-- Write your markup here -->
-
-    <!-- Don't forget to add your <script> tag here -->
-
+    <div class="tilte">
+      <h1>Change Calculator</h1>
+    </div>
+    <br>
+    <!-- Input div -->
+    <div class="tile is-parent">
+      <div class="tile is-child notification is-warning">
+        <div class="columns">
+          <div class="column">
+             <center><p>Amount due for sale.</p></center>
+            <center><input id="amount-due" class="column is-10" placeholder="Amount Due"></input></center>
+          </div>
+          <div class="column">
+              <center><p>Amount given by customer.</p></center>
+            <center><input id="amount-received" class="column is-10" placeholder="Amount Received"></input></center>
+          </div>
+          <div class="column">
+            <center><div>Change due.</div></center>
+            <center><p id="change-due" class="column is-10" placeholder="0"></p></center>
+          </div>
+         </div>
+          <div class="column">
+            <center><div>Press for exact change.</div></center>
+            <center><button id="calculate-change" class="column is-12">Calculate</button></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dollar output div -->
+    <div class="tile is-parent">
+      <div id="coins" class="tile is-child notification is-primary">
+        <div id="dollar-bills" class="columns">
+          <div class="column is-full">
+            <p><center>Dollars</center></p>
+            <center><p id="dollars-output" class="column">0</p></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- change output div -->
+    <div class="tile is-parent">
+      <div id="coins" class="tile is-child notification is-info">
+        <div class="columns">
+          <div class="column">
+            <p><center>Quaters</center></p>
+            <center><p id="quarters-output" class="column">0</p></center>
+          </div>
+          <div class="column">
+            <p><center>Dimes</center></p>
+            <center><p id="dimes-output" class="column">0</p></center>
+          </div>
+          <div class="column">
+            <p><center>Nickels</center></p>
+            <center><p id="nickels-output" class="column">0</p></center>
+          </div>
+          <div class="column">
+            <p><center>Pennies</center></p>
+            <center><p id="pennies-output" class="column">0</p></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
