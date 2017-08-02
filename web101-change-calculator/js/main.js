@@ -10,9 +10,9 @@ function calculateChange(){
     $('#nickels-output').text("0")
     $('#pennies-output').text("0")
   //verify total_owed is a Num
-  if (isNaN(total_owed)){
-    $('#change-due').text("Invalid Input! Please only input Numbers.");
-  }
+  // if (isNaN(total_owed)){
+  //   $('#change-due').text("Invalid Input! Please only input Numbers.");
+  // }
   //verify amount-rcvd is enough and fix $0.00
   if (total_owed < 0){
     var still_owed = Math.abs(total_owed).toFixed(2);
@@ -84,9 +84,13 @@ function calculateChange(){
      var pennies = Math.floor(cents / .01 + .001);
      console.log(pennies);
      $('#pennies-output').text(pennies);
-   }
-
+  }
+  if (isNaN(total_owed)){
+    $('#change-due').text("Invalid Input! Please only input Numbers.");
+  } else {
    $('#change-due').text("$"+Math.abs(total_owed).toFixed(2));
+  }
+
 }
 
 function handleClickEvent(){
