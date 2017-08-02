@@ -14,7 +14,7 @@ const url = 'http://localhost:8888/index.html';
 describe('Change Calculator', function () {
   this.timeout(5000);
   this.slow(3000);
-  
+
   it('should load successfully', () => axios.get(url).then(r => expect(r.status === 200)));
 
   describe('HTML', () => {
@@ -30,7 +30,7 @@ describe('Change Calculator', function () {
         .then(heading => expect(heading).to.equal('Change Calculator'))
     );
 
-    it('should have an input element with an id of "amount-due"', () => 
+    it('should have an input element with an id of "amount-due"', () =>
       pageObject
         .evaluate(() => document.querySelector('#amount-due'))
         .then(input => expect(input).to.exist)
@@ -72,7 +72,7 @@ describe('Change Calculator', function () {
 
     it(`should display correct change`, () => {
       return pageObject
-        .goto(url)  
+        .goto(url)
         .type('#amount-received', '20')
         .type('#amount-due', '10.21')
         .click('#calculate-change')
@@ -86,7 +86,7 @@ describe('Change Calculator', function () {
         }))
         .end()
         .then(change => {
-          expect(change.dollars).to.equal('9', 'Expected dollars didn\'t match');
+          expect(change.dollars).to.equal('4', 'Expected dollars didn\'t match');
           expect(change.quarters).to.equal('3', 'Expected quarters didn\'t match');
           expect(change.dimes).to.equal('0', 'Expected dimes didn\'t match');
           expect(change.nickels).to.equal('0', 'Expected nickels didn\'t match');
@@ -96,7 +96,7 @@ describe('Change Calculator', function () {
 
     it(`should display correct change`, () => {
       return pageObject
-        .goto(url)  
+        .goto(url)
         .type('#amount-received', '20')
         .type('#amount-due', '13.34')
         .click('#calculate-change')
@@ -110,7 +110,7 @@ describe('Change Calculator', function () {
         }))
         .end()
         .then(change => {
-          expect(change.dollars).to.equal('6', 'Expected dollars didn\'t match');
+          expect(change.dollars).to.equal('1', 'Expected dollars didn\'t match');
           expect(change.quarters).to.equal('2', 'Expected quarters didn\'t match');
           expect(change.dimes).to.equal('1', 'Expected dimes didn\'t match');
           expect(change.nickels).to.equal('1', 'Expected nickels didn\'t match');
