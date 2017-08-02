@@ -77,16 +77,14 @@ function calculateChange(){
     var cents = Math.round(cents * 100) / 100;
     var nickels = Math.floor(cents / .05);
     cents = cents - (nickels * .05);
-    cents = Math.round(cents / .01);
+    console.log(cents);
     $('#nickels-output').text(nickels);
   }
-
-  // have to fix whole interger, creates x00 pennies // Number.isInterger(cents)
-  if (cents > .001 ){
-    var cents = Math.round(cents * 100) / 100;
-    var pennies = (cents / .01);
-    $('#pennies-output').text(pennies);
-  }
+  if (cents >= .001){
+     var pennies = Math.floor(cents / .01 + .001);
+     console.log(pennies);
+     $('#pennies-output').text(pennies);
+   }
 
    $('#change-due').text("$"+Math.abs(total_owed).toFixed(2));
 }
