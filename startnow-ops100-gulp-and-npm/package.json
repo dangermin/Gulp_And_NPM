@@ -1,0 +1,26 @@
+{
+  "name": "gulp-and-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-uglify": "^3.0.0",
+    "mocha": "^3.4.2",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "gulp-connect": "^5.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-livereload": "^3.8.1"
+  }
+}
